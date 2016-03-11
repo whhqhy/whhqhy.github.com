@@ -1,0 +1,9 @@
+在博客源码目录下，依次执行下面命令
+npm install hexo
+npm install
+npm install hexo-deployer-git
+
+推送到github
+git add -all
+git commit -m "..."
+git push origin blog
