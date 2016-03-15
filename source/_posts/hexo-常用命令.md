@@ -29,7 +29,7 @@ npm install hexo-deployer-git
 # 三、 命令行推送到github
 添加所有改变到暂存区    
 ```bash
-git add -all
+git add --all
 ```
 提交本地改变到仓库
 ```bash
