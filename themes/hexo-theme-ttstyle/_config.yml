@@ -8,11 +8,6 @@ github: "http://github.com/whhqhy"
 qq: "http://github.com/whhqhy"
 
 
-# 托管服务器
-gitPagesServerAddr: "http://gitcafe.com/signup?invited_by=tangkunyin"
-gitPagesServerName: "GitCafe"
-
-
 # 是否在新窗口打开链接
 open_in_new: true
 
@@ -27,7 +22,7 @@ highlightCode: true
 
 #代码高亮样式名称
 ## 内置样式名称5种：idea xcode solarized-dark solarized-light googlecode
-highlightStyle: xcode
+highlightStyle: googlecode
 
 #捐赠相关。默认微信打赏
 donateEnable: false
