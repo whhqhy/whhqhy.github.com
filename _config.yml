@@ -4,7 +4,7 @@
 
 # Site
 title: 我的哲思
-subtitle: ---致敬 好好学习，天天向上
+subtitle: 致敬 好好学习，天天向上
 description: 累死狗
 author: whhqhy
 language:
@@ -63,7 +63,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-ttstyle
+theme: yelee
+## theme: hexo-theme-ttstyle
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

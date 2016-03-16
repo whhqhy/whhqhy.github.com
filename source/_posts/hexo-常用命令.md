@@ -4,9 +4,9 @@ categories: hexo
 date: 2016-03-15 19:01:49
 timestamp:
 catAlias:
-tags: [hexo,命令行]
+tags: [hexo]
 keywords:
-description: 博客第一版
+description: 常用命令
 ---
 
 ------

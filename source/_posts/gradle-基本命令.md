@@ -6,8 +6,10 @@ timestamp:
 catAlias:
 tags: [gradle,groovy]
 keywords:
-description:
+description: 
 ---
+gradle部分知识点 
+<!-- more -->
 
 ---
 # 一、 基本目录
