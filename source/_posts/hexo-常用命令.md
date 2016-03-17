@@ -6,7 +6,7 @@ timestamp:
 catAlias:
 tags: [hexo]
 keywords:
-description: 常用命令
+description: 第一次安装，需要经常使用的命令。
 ---
 
 ------

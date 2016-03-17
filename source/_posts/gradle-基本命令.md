@@ -1,5 +1,5 @@
 ---
-title: gradle 基本命令
+title: gradle基本，记录
 categories: Gradle
 date: 2016-03-16 16:04:41
 timestamp:
@@ -8,12 +8,11 @@ tags: [gradle,groovy]
 keywords:
 description: 
 ---
-gradle部分知识点 
+gradle的目录结构，使用中copy，delete方法记录 
 <!-- more -->
 
 ---
-# 一、 基本目录
-
+# 一、基本目录
 | 目录类型	| Eclipse	| IDEA（Android Studio）
 | --------   | -----:  | :----:  |
 | 代码根目录	| /	| src/main
@@ -25,7 +24,7 @@ gradle部分知识点
 | res文件	| /res	| [代码根目录]/res
 | AndroidMainfest.xml	| AndroidMainfest.xml	| [代码根目录]/AndroidMainfest.xml
 
-# 二、 使用的方法
+# 二、使用的方法
 复制目录
 ```gradle 
 def copyTargetDir(){

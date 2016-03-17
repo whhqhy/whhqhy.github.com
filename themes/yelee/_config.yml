@@ -31,7 +31,7 @@ root_url:
 subnav:
   #Email: ""
   #新浪微博: "sina weibo"
-  GitHub: "#"
+  GitHub: "https://github.com/whhqhy"
   #V2EX: "#"
   #RSS: "/atom.xml"
   #知乎: "zhihu"
@@ -135,7 +135,7 @@ animate: true
 
 # Load jQuery UI to style tooltips
 # 工具提示框样式美化
-jquery_ui: true
+jquery_ui: false
 
 # >>> Small features | 小功能设置 <<<
 
@@ -147,7 +147,6 @@ tagcloud: true
 friends:
   Hexo: https://hexo.io/zh-cn/docs/
   GitHub: https://pages.github.com/
-  WHHQHY: http://whhqhy.github.io/
 #friends: false
 
 #是否开启“关于我”。
