@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>砸金蛋</title>
+<link rel="stylesheet" type="text/css" href="{$cssUrl}/mobile.css" />
+<script type="text/javascript">
+function event(value){
+	  document.write(value);    
+}
+
+function pay3(gameid,userid,num,propid,money) {
+    var json_str = '{"goodsfile":"","flag":"0","itemtype":"0","goodsType":"0","passfield":"","needprotect":"false","personalized":"true","pay_scene_id":880002,"priorityMoney":1,"goodtype":"15","coin":440000,"gameid":'+gameid+',"goodscount":'+num+',"goodsdesc":"超值礼包","goodsid":'+propid+',"goodsname":"超值礼包","preprice":'+money+',"price":'+money+',"userid":'+userid+'}';
+    window.dismiss.onAndroidAction(35,json_str);
+}
+
+</script>
+</head>
+<body>
+        <div>
+        	<a href="javascript:pay3(30009,102546,1,133,10);">礼包一</a>
+            <a href="javascript:event(1);" >礼包二</a>
+        </div>
+
+</body>
+</html>
