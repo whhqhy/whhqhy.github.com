@@ -48,4 +48,18 @@ git push origin blog
 ```
 执行hexo g -d生成网站并部署到GitHub上。
 
+# 五、 使用本地图片
+1. 首先确认 _config.yml 中有 post_asset_folder: true
+2. npm install hexo-asset-image --save
+```
+Example
+MacGesture2-Publish
+├── apppicker.jpg
+├── logo.jpg
+└── rules.jpg
+MacGesture2-Publish.md
+Make sure post_asset_folder: true in your _config.yml.
+
+Just use ![logo](MacGesture2-Publish/logo.jpg) to insert logo.jpg.
+```
 * [Hexo 官方文档](https://hexo.io/zh-cn/docs/)
