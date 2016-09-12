@@ -52,3 +52,79 @@ task executeTaskCopy<<{
     deleteTargetDir()
 }
 ```
+显示文件列表
+```gradle
+task echoDirListViaAntBuilder() {
+    description = 'Uses the built-in AntBuilder instance to echo and list files'
+    //Docs: http://ant.apache.org/manual/Types/fileset.html
+    
+    //Echo the Gradle project name via the ant echo plugin
+    ant.echo(message: project.name)
+    ant.echo(path)
+    ant.echo("${projectDir}/samples")
+    
+    println 'test'
+
+    //Gather list of files in a subdirectory
+    ant.fileScanner{
+        fileset(dir:"samples")
+    }.each{
+        //Print each file to screen with the CWD (projectDir) path removed.
+        println it.toString() - "${projectDir}"
+    }
+}
+
+echo :
+$ bash run-example.bsh
+[ant:echo] ant-antbuilder
+[ant:echo] :echoDirListViaAntBuilder
+[ant:echo] E:\github\oreilly-gradle-book-examples\ant-antbuilder/samples
+test
+\samples\one.txt
+\samples\three.txt
+\samples\two.txt
+:echoDirListViaAntBuilder UP-TO-DATE
+
+```
+依赖关系
+```gradle
+$ cat build.gradle
+ant.importBuild 'build.xml'
+
+defaultTasks = ['antStandAloneHello', 'afterTheAntTask']
+
+task beforeTheAntTask << {
+    println "A Gradle task that precedes the Ant target"
+}
+
+task afterTheAntTask(dependsOn: "antHello") << {
+    println "A Gradle task that precedes the Ant target"
+}
+
+Administrator@whhqhy /cygdrive/e/github/oreilly-gradle-book-examples/ant-antdependsongradle
+$ cat build.xml
+<project>
+  <target name="antStandAloneHello">
+    <echo message="A stand-alone hello from an Ant target"/>
+  </target>
+
+  <target name="antHello" depends="beforeTheAntTask">
+    <echo message="A dependent hello from the Ant target"/>
+  </target>
+</project>
+
+
+echo:
+$ gradle
+:antStandAloneHello
+[ant:echo] A stand-alone hello from an Ant target
+:beforeTheAntTask
+A Gradle task that precedes the Ant target
+:antHello
+[ant:echo] A dependent hello from the Ant target
+:afterTheAntTask
+A Gradle task that precedes the Ant target
+
+BUILD SUCCESSFUL
+
+```

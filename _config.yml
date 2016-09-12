@@ -4,10 +4,10 @@
 
 # Site
 title: 我的哲思
-subtitle: 耐得住寂寞，守得了花开。
-description: 
+subtitle: 
+description: 耐得住寂寞，守得了花开。
 author: whhqhy
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yelee
+theme: next
 ## theme: hexo-theme-ttstyle
 
 # Deployment
