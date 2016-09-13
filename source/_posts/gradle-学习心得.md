@@ -2,8 +2,6 @@
 title: gradle学习心得，记录
 categories: Gradle
 date: 2016-07-04 18:55:41
-timestamp:
-catAlias:
 tags: [gradle,groovy]
 keywords:
 description: 
@@ -15,7 +13,7 @@ hook ,apply from
 # 一、gradle工作流
 具体描述有空再写
 
-![gradle工作流](gradle-学习心得/gradle work push.png)
+![gradle工作流](gradle work push.png)
 
 ## 读取manifest中versionName
 ``` groovy

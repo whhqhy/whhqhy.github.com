@@ -1,9 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
-timestamp:
-catAlias:
-categories: defaultCategory
+categories: 
 tags:
 keywords:
 description:
