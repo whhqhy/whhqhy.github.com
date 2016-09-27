@@ -1,4 +1,105 @@
-<!doctype html><html class="theme-next mist use-motion"><head><meta charset=UTF-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1"><meta http-equiv=Cache-Control content=no-transform><meta http-equiv=Cache-Control content=no-siteapp><link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel=stylesheet type=text/css><link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel=stylesheet type=text/css><link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel=stylesheet type=text/css><link href="/css/main.css?v=5.0.1" rel=stylesheet type=text/css><meta name=keywords content=gradle,groovy,><link rel="shortcut icon" type=image/x-icon href="/?v=5.0.1"><meta name=description content="hook ,apply from"><meta property=og:type content=article><meta property=og:title content=gradle学习心得，记录><meta property=og:url content=http://whhqhy.github.io/2016/07/04/gradle-学习心得/index.html><meta property=og:site_name content=我的哲思><meta property=og:description content="hook ,apply from"><meta property=og:image content="http://whhqhy.github.io/2016/07/04/gradle-学习心得/gradle work push.png"><meta property=og:updated_time content=2016-09-14T12:05:14.163Z><meta name=twitter:card content=summary><meta name=twitter:title content=gradle学习心得，记录><meta name=twitter:description content="hook ,apply from"><meta name=twitter:image content="http://whhqhy.github.io/2016/07/04/gradle-学习心得/gradle work push.png"><script type=text/javascript id=hexo.configuration>
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="gradle,groovy," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="hook ,apply from">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gradle学习心得，记录">
+<meta property="og:url" content="http://whhqhy.github.io/2016/07/04/gradle-学习心得/index.html">
+<meta property="og:site_name" content="我的哲思">
+<meta property="og:description" content="hook ,apply from">
+<meta property="og:image" content="http://whhqhy.github.io/2016/07/04/gradle-学习心得/gradle work push.png">
+<meta property="og:updated_time" content="2016-09-14T12:05:14.163Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gradle学习心得，记录">
+<meta name="twitter:description" content="hook ,apply from">
+<meta name="twitter:image" content="http://whhqhy.github.io/2016/07/04/gradle-学习心得/gradle work push.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
@@ -10,11 +111,532 @@
       author: '博主'
     }
   };
-</script><link rel=canonical href="http://whhqhy.github.io/2016/07/04/gradle-学习心得/"><title>gradle学习心得，记录 | 我的哲思</title></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-Hans><div class="container one-collumn sidebar-position-left page-post-detail"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-meta><div class=custom-logo-site-title><a href="/" class=brand rel=start><span class=logo-line-before><i></i></span> <span class=site-title>我的哲思</span> <span class=logo-line-after><i></i></span></a></div><p class=site-subtitle></p></div><div class=site-nav-toggle><button><span class=btn-bar></span> <span class=btn-bar></span> <span class=btn-bar></span></button></div><nav class=site-nav><ul id=menu class=menu><li class="menu-item menu-item-home"><a href="/" rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-categories"><a href=/categories rel=section><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-archives"><a href=/archives rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-tags"><a href=/tags rel=section><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class=popup><span class="search-icon fa fa-search"></span> <input type=text id=local-search-input><div id=local-search-result></div><span class=popup-btn-close>close</span></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><div id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline">gradle学习心得，记录</h1><div class=post-meta><span class=post-time><span class=post-meta-item-icon><i class="fa fa-calendar-o"></i></span> <span class=post-meta-item-text>发表于</span><time itemprop=dateCreated datetime=2016-07-04T18:55:41+08:00 content=2016-07-04>2016-07-04</time></span> <span class=post-category>&nbsp; | &nbsp; <span class=post-meta-item-icon><i class="fa fa-folder-o"></i></span> <span class=post-meta-item-text>分类于</span> <span itemprop=about itemscope itemtype=https://schema.org/Thing><a href="/categories/Gradle/" itemprop=url rel=index><span itemprop=name>Gradle</span></a></span></span> <span class=post-comments-count>&nbsp; | &nbsp; <a href=/2016/07/04/gradle-学习心得/#comments itemprop=discussionUrl><span class="post-comments-count ds-thread-count" data-thread-key="2016/07/04/gradle-学习心得/" itemprop=commentsCount></span></a></span></div></header><div class=post-body itemprop=articleBody><p>hook ,apply from<br><a id=more></a></p><hr><h1 id=&#x4E00;&#x3001;gradle&#x5DE5;&#x4F5C;&#x6D41;><a href=#&#x4E00;&#x3001;gradle&#x5DE5;&#x4F5C;&#x6D41; class=headerlink title=&#x4E00;&#x3001;gradle&#x5DE5;&#x4F5C;&#x6D41;></a>&#x4E00;&#x3001;gradle&#x5DE5;&#x4F5C;&#x6D41;</h1><p>&#x5177;&#x4F53;&#x63CF;&#x8FF0;&#x6709;&#x7A7A;&#x518D;&#x5199;</p><p><img src="/2016/07/04/gradle-&#x5B66;&#x4E60;&#x5FC3;&#x5F97;/gradle work push.png" alt=gradle&#x5DE5;&#x4F5C;&#x6D41;></p><h2 id=&#x8BFB;&#x53D6;manifest&#x4E2D;versionName><a href=#&#x8BFB;&#x53D6;manifest&#x4E2D;versionName class=headerlink title=&#x8BFB;&#x53D6;manifest&#x4E2D;versionName></a>&#x8BFB;&#x53D6;manifest&#x4E2D;versionName</h2><figure class="highlight groovy"><table><tr><td class=gutter><pre><div class=line>1</div><div class=line>2</div><div class=line>3</div><div class=line>4</div><div class=line>5</div></pre></td><td class=code><pre><div class=line><span class=keyword>def</span> getVersionNameAdvanced(Project project){</div><div class=line>    <span class=keyword>def</span> xmlFile = project.file(<span class=string>&quot;AndroidManifest.xml&quot;</span>)</div><div class=line>    <span class=keyword>def</span> rootManifest = <span class=keyword>new</span> XmlSlurper().parse(xmlFile)</div><div class=line>    <span class=keyword>return</span> rootManifest[<span class=string>&apos;@android:versionName&apos;</span>]</div><div class=line>}</div></pre></td></tr></table></figure><h2 id=&#x4E3A;&#x6240;&#x6709;&#x5B50;&#x5DE5;&#x7A0B;&#x6DFB;&#x52A0;&#x516C;&#x5171;&#x65B9;&#x6CD5;><a href=#&#x4E3A;&#x6240;&#x6709;&#x5B50;&#x5DE5;&#x7A0B;&#x6DFB;&#x52A0;&#x516C;&#x5171;&#x65B9;&#x6CD5; class=headerlink title=&#x4E3A;&#x6240;&#x6709;&#x5B50;&#x5DE5;&#x7A0B;&#x6DFB;&#x52A0;&#x516C;&#x5171;&#x65B9;&#x6CD5;></a>&#x4E3A;&#x6240;&#x6709;&#x5B50;&#x5DE5;&#x7A0B;&#x6DFB;&#x52A0;&#x516C;&#x5171;&#x65B9;&#x6CD5;</h2><figure class="highlight plain"><table><tr><td class=gutter><pre><div class=line>1</div><div class=line>2</div><div class=line>3</div><div class=line>4</div></pre></td><td class=code><pre><div class=line>subprojects{</div><div class=line>    logger.log(LogLevel.INFO,&apos;Config for &apos;+project.name)</div><div class=line>    apply from: rootProject.getRootDir().getAbsolutePath()+&apos;/utils.gradle&apos;</div><div class=line>}</div></pre></td></tr></table></figure><h2 id=&#x5C06;&#x4F9D;&#x8D56;&#x6269;&#x5C55;&#x548C;&#x53C2;&#x6570;&#x62BD;&#x79BB;&#x5230;&#x65B0;&#x7684;&#x811A;&#x672C;><a href=#&#x5C06;&#x4F9D;&#x8D56;&#x6269;&#x5C55;&#x548C;&#x53C2;&#x6570;&#x62BD;&#x79BB;&#x5230;&#x65B0;&#x7684;&#x811A;&#x672C; class=headerlink title=&#x5C06;&#x4F9D;&#x8D56;&#x6269;&#x5C55;&#x548C;&#x53C2;&#x6570;&#x62BD;&#x79BB;&#x5230;&#x65B0;&#x7684;&#x811A;&#x672C;></a>&#x5C06;&#x4F9D;&#x8D56;&#x6269;&#x5C55;&#x548C;&#x53C2;&#x6570;&#x62BD;&#x79BB;&#x5230;&#x65B0;&#x7684;&#x811A;&#x672C;</h2><figure class="highlight plain"><table><tr><td class=gutter><pre><div class=line>1</div><div class=line>2</div><div class=line>3</div><div class=line>4</div><div class=line>5</div><div class=line>6</div><div class=line>7</div><div class=line>8</div><div class=line>9</div><div class=line>10</div><div class=line>11</div><div class=line>12</div><div class=line>13</div><div class=line>14</div><div class=line>15</div><div class=line>16</div><div class=line>17</div><div class=line>18</div><div class=line>19</div><div class=line>20</div><div class=line>21</div><div class=line>22</div><div class=line>23</div><div class=line>24</div><div class=line>25</div><div class=line>26</div><div class=line>27</div><div class=line>28</div><div class=line>29</div><div class=line>30</div><div class=line>31</div></pre></td><td class=code><pre><div class=line>config.gradle</div><div class=line></div><div class=line>apply plugin: &apos;com.android.application&apos;</div><div class=line></div><div class=line>def addExtendsDependencies(){</div><div class=line>    dependencies {</div><div class=line>        compile(name: &apos;CommonLib-1.0-release&apos;, ext: &apos;aar&apos;)</div><div class=line>        compile(name: &apos;Drawer-1.0-release&apos;, ext: &apos;aar&apos;)</div><div class=line></div><div class=line>    }</div><div class=line></div><div class=line>    repositories{</div><div class=line>        flatDir{</div><div class=line>            dirs &apos;E:\\myAar&apos;</div><div class=line>       }</div><div class=line>    }</div><div class=line>}</div><div class=line>//&#x5C06;&#x51FD;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;extra&#x5C5E;&#x6027;&#x4E2D;&#x53BB;&#xFF0C;&#x8FD9;&#x6837;&#xFF0C;&#x52A0;&#x8F7D;utils.gradle&#x7684;Project&#x5C31;&#x80FD;&#x8C03;&#x7528;&#x6B64;&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x4E86;</div><div class=line>ext{</div><div class=line>    addExtendsDependencies = this.&amp;addExtendsDependencies</div><div class=line>    appName = &quot;&#x5929;&#x5929;&#x6597;&#x5730;&#x4E3B;&#x771F;&#x4EBA;&#x7248;&quot;</div><div class=line>}</div><div class=line></div><div class=line>build.gradle</div><div class=line></div><div class=line>apply from: rootProject.getRootDir().getAbsolutePath()+&quot;/gradle/${channelFlavors}Config.gradle&quot;</div><div class=line></div><div class=line>dependencies {</div><div class=line>    compile fileTree(dir: &apos;libs&apos;, include: &apos;*.jar&apos;)</div><div class=line>    addExtendsDependencies()</div><div class=line>}</div></pre></td></tr></table></figure><h2 id=&#x81EA;&#x5B9A;&#x4E49;&#x6E20;&#x9053;&#x540D;&#x79F0;><a href=#&#x81EA;&#x5B9A;&#x4E49;&#x6E20;&#x9053;&#x540D;&#x79F0; class=headerlink title=&#x81EA;&#x5B9A;&#x4E49;&#x6E20;&#x9053;&#x540D;&#x79F0;></a>&#x81EA;&#x5B9A;&#x4E49;&#x6E20;&#x9053;&#x540D;&#x79F0;</h2><figure class="highlight plain"><table><tr><td class=gutter><pre><div class=line>1</div><div class=line>2</div><div class=line>3</div><div class=line>4</div><div class=line>5</div></pre></td><td class=code><pre><div class=line>productFlavors{</div><div class=line>        &quot;${channelFlavors}&quot;{</div><div class=line>            applicationId packageName</div><div class=line>        }</div><div class=line>    }</div></pre></td></tr></table></figure><h2 id=xml&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;&#xFF0C;&#x66F4;&#x65B0;&#xFF0C;&#x67E5;&#x8BE2;><a href=#xml&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;&#xFF0C;&#x66F4;&#x65B0;&#xFF0C;&#x67E5;&#x8BE2; class=headerlink title=xml&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;&#xFF0C;&#x66F4;&#x65B0;&#xFF0C;&#x67E5;&#x8BE2;></a>xml&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;&#xFF0C;&#x66F4;&#x65B0;&#xFF0C;&#x67E5;&#x8BE2;</h2><figure class="highlight plain"><table><tr><td class=gutter><pre><div class=line>1</div><div class=line>2</div><div class=line>3</div><div class=line>4</div><div class=line>5</div><div class=line>6</div><div class=line>7</div><div class=line>8</div><div class=line>9</div><div class=line>10</div><div class=line>11</div><div class=line>12</div><div class=line>13</div><div class=line>14</div><div class=line>15</div><div class=line>16</div><div class=line>17</div><div class=line>18</div><div class=line>19</div><div class=line>20</div><div class=line>21</div><div class=line>22</div><div class=line>23</div><div class=line>24</div><div class=line>25</div><div class=line>26</div><div class=line>27</div><div class=line>28</div><div class=line>29</div><div class=line>30</div><div class=line>31</div><div class=line>32</div><div class=line>33</div><div class=line>34</div><div class=line>35</div><div class=line>36</div><div class=line>37</div><div class=line>38</div><div class=line>39</div><div class=line>40</div><div class=line>41</div><div class=line>42</div><div class=line>43</div><div class=line>44</div><div class=line>45</div><div class=line>46</div><div class=line>47</div><div class=line>48</div><div class=line>49</div><div class=line>50</div><div class=line>51</div><div class=line>52</div><div class=line>53</div><div class=line>54</div><div class=line>55</div><div class=line>56</div><div class=line>57</div><div class=line>58</div><div class=line>59</div><div class=line>60</div><div class=line>61</div><div class=line>62</div><div class=line>63</div><div class=line>64</div><div class=line>65</div><div class=line>66</div><div class=line>67</div><div class=line>68</div><div class=line>69</div><div class=line>70</div><div class=line>71</div><div class=line>72</div><div class=line>73</div><div class=line>74</div><div class=line>75</div><div class=line>76</div><div class=line>77</div><div class=line>78</div><div class=line>79</div><div class=line>80</div><div class=line>81</div><div class=line>82</div><div class=line>83</div><div class=line>84</div><div class=line>85</div><div class=line>86</div><div class=line>87</div><div class=line>88</div><div class=line>89</div><div class=line>90</div><div class=line>91</div><div class=line>92</div><div class=line>93</div><div class=line>94</div><div class=line>95</div></pre></td><td class=code><pre><div class=line>def void updateManifestXml(def path){</div><div class=line>    File file = new File(path)</div><div class=line></div><div class=line>    def doc = DOMBuilder.parse(new StringReader(file.text))</div><div class=line>    def root = doc.documentElement</div><div class=line>    use(groovy.xml.dom.DOMCategory) {</div><div class=line>        //&#x79FB;&#x9664;&#x6389;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;intent-filter &#x4EE5;&#x53CA; &#x57FA;&#x5730;&#x6807;&#x5FD7;&#x7684;intent-filter</div><div class=line>        removeIntentFilterByAction_Categroy(root,&quot;android.intent.action.MAIN&quot;,&quot;android.intent.category.LAUNCHER&quot;)</div><div class=line>        removeIntentFilterByAction_Categroy(root,&quot;android.intent.action.CHINAMOBILE_OMS_GAME&quot;,&quot;android.intent.category.CHINAMOBILE_GAMES&quot;)</div><div class=line></div><div class=line></div><div class=line>        // &#x6839;&#x636E;&#x4E0D;&#x540C;&#x542F;&#x52A8;Activity&#x6DFB;&#x52A0;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;</div><div class=line>        if(hasLoginActivity){</div><div class=line>            // LoginAcitivity &#x95EA;&#x5C4F;&#x9875;&#x542F;&#x52A8;</div><div class=line>            // 1. &#x542F;&#x52A8;&#x9875;&#x6A2A;&#x7AD6;&#x5C4F;&#x8BBE;&#x7F6E;</div><div class=line>            // 2. &#x542F;&#x52A8;&#x9875;&#x4E3B;&#x9898;&#x8BBE;&#x7F6E;</div><div class=line>            //def androidMap = [&quot;android:screenOrientation&quot;:&quot;landscape&quot;,</div><div class=line>            //           &quot;android:theme&quot;:&quot;@style/GameTheme&quot;]</div><div class=line>            if(androidMap.size()&gt;0){</div><div class=line>                replaceActivityAttributes(root,androidMap)</div><div class=line>            }</div><div class=line>            // 3. LoginActivity &#x6DFB;&#x52A0;&#x542F;&#x52A8;&#x9879; &#x548C; &#x57FA;&#x5730;&#x6807;&#x5FD7;</div><div class=line>            addMainIntentFilter(root,&quot;com.zengame.basic.LoginActivity&quot;)</div><div class=line>            addAndGameIntentFilter(root,&quot;com.zengame.basic.LoginActivity&quot;)</div><div class=line>        }else{</div><div class=line>            // GameActivity &#x542F;&#x52A8;</div><div class=line>            // 1. &#x79FB;&#x9664;&#x6389;LoginActivity</div><div class=line>            removeActivityByName(root,&quot;com.zengame.basic.LoginActivity&quot;)</div><div class=line>            // 2. GameActivity &#x6DFB;&#x52A0;&#x542F;&#x52A8;&#x9879; &#x548C; &#x57FA;&#x5730;&#x6807;&#x5FD7;</div><div class=line>            addMainIntentFilter(root,&quot;com.zengame.basic.GameActivity&quot;)</div><div class=line>            addAndGameIntentFilter(root,&quot;com.zengame.basic.GameActivity&quot;)</div><div class=line>        }</div><div class=line></div><div class=line>    }</div><div class=line></div><div class=line>    def result = XmlUtil.serialize(root)</div><div class=line>    file.write(result,&quot;UTF-8&quot;)</div><div class=line>   // println result</div><div class=line>}</div><div class=line></div><div class=line>def void addMainIntentFilter(def root,String name){</div><div class=line>    root.getElementsByTagName(&quot;activity&quot;).each {node -&gt;</div><div class=line>        if(node.attributes.getNamedItem(&quot;android:name&quot;).nodeValue==name){</div><div class=line>            org.w3c.dom.Element element = node.appendNode(&quot;intent-filter&quot;)</div><div class=line>            element.appendNode(&quot;action&quot;,[&quot;android:name&quot;:&quot;android.intent.action.MAIN&quot;])</div><div class=line>            element.appendNode(&quot;category&quot;,[&quot;android:name&quot;:&quot;android.intent.category.LAUNCHER&quot;])</div><div class=line>        }</div><div class=line>    }</div><div class=line>}</div><div class=line></div><div class=line>def void addAndGameIntentFilter(def root,String name){</div><div class=line>    root.getElementsByTagName(&quot;activity&quot;).each {node -&gt;</div><div class=line>        if(node.attributes.getNamedItem(&quot;android:name&quot;).nodeValue==name){</div><div class=line>            org.w3c.dom.Element element = node.appendNode(&quot;intent-filter&quot;)</div><div class=line>            element.appendNode(&quot;action&quot;,[&quot;android:name&quot;:&quot;android.intent.action.CHINAMOBILE_OMS_GAME&quot;])</div><div class=line>            element.appendNode(&quot;category&quot;,[&quot;android:name&quot;:&quot;android.intent.category.CHINAMOBILE_GAMES&quot;])</div><div class=line>        }</div><div class=line>    }</div><div class=line>}</div><div class=line></div><div class=line>def void removeActivityByName(def root,String name){</div><div class=line>    root.getElementsByTagName(&quot;activity&quot;).each {node -&gt;</div><div class=line>        if(node.attributes.getNamedItem(&quot;android:name&quot;).nodeValue==name){</div><div class=line>            node.parentNode.removeChild(node)</div><div class=line>        }</div><div class=line>    }</div><div class=line>}</div><div class=line></div><div class=line>def void replaceActivityAttributes(def root,def map){</div><div class=line>    root.getElementsByTagName(&quot;activity&quot;).each {node -&gt;</div><div class=line>        if(node.attributes.getNamedItem(&quot;android:name&quot;).nodeValue==&quot;com.zengame.basic.LoginActivity&quot;){</div><div class=line>            map.each {key,value -&gt;</div><div class=line>                node.attributes.getNamedItem(key).setNodeValue(value)</div><div class=line>            }</div><div class=line>        }</div><div class=line>    }</div><div class=line>}</div><div class=line></div><div class=line>def void removeIntentFilterByAction_Categroy(def root,String actionValue,String categroyValue){</div><div class=line>    root.getElementsByTagName(&quot;intent-filter&quot;).each {node -&gt;</div><div class=line>        boolean hasMain</div><div class=line>        boolean hasLuancher</div><div class=line>        node.childNodes.each { childNode -&gt;</div><div class=line>            if (childNode.nodeName == &quot;action&quot; &amp;&amp; actionValue == childNode.attributes.getNamedItem(&quot;android:name&quot;).nodeValue) {</div><div class=line>                hasMain = true</div><div class=line>            }</div><div class=line>            if (childNode.nodeName == &quot;category&quot; &amp;&amp; categroyValue == childNode.attributes.getNamedItem(&quot;android:name&quot;).nodeValue) {</div><div class=line>                hasLuancher = true</div><div class=line>            }</div><div class=line>        }</div><div class=line>        if (hasMain &amp;&amp; hasLuancher) {</div><div class=line>            node.parentNode.removeChild(node)</div><div class=line>        }</div><div class=line>    }</div><div class=line>}</div></pre></td></tr></table></figure><h2 id=&#x6DFB;&#x52A0;&#x58F0;&#x660E;&#x5468;&#x671F;hook&#xFF0C;&#x66FF;&#x6362;&#x6784;&#x5EFA;apk&#x4E2D;&#x8D44;&#x6E90;&#x6587;&#x4EF6;><a href=#&#x6DFB;&#x52A0;&#x58F0;&#x660E;&#x5468;&#x671F;hook&#xFF0C;&#x66FF;&#x6362;&#x6784;&#x5EFA;apk&#x4E2D;&#x8D44;&#x6E90;&#x6587;&#x4EF6; class=headerlink title=&#x6DFB;&#x52A0;&#x58F0;&#x660E;&#x5468;&#x671F;hook&#xFF0C;&#x66FF;&#x6362;&#x6784;&#x5EFA;apk&#x4E2D;&#x8D44;&#x6E90;&#x6587;&#x4EF6;></a>&#x6DFB;&#x52A0;&#x58F0;&#x660E;&#x5468;&#x671F;hook&#xFF0C;&#x66FF;&#x6362;&#x6784;&#x5EFA;apk&#x4E2D;&#x8D44;&#x6E90;&#x6587;&#x4EF6;</h2><figure class="highlight plain"><table><tr><td class=gutter><pre><div class=line>1</div><div class=line>2</div><div class=line>3</div><div class=line>4</div><div class=line>5</div><div class=line>6</div><div class=line>7</div><div class=line>8</div><div class=line>9</div><div class=line>10</div><div class=line>11</div><div class=line>12</div><div class=line>13</div><div class=line>14</div><div class=line>15</div><div class=line>16</div><div class=line>17</div><div class=line>18</div><div class=line>19</div><div class=line>20</div><div class=line>21</div><div class=line>22</div><div class=line>23</div><div class=line>24</div><div class=line>25</div><div class=line>26</div><div class=line>27</div><div class=line>28</div><div class=line>29</div><div class=line>30</div><div class=line>31</div><div class=line>32</div><div class=line>33</div><div class=line>34</div><div class=line>35</div><div class=line>36</div><div class=line>37</div><div class=line>38</div><div class=line>39</div><div class=line>40</div><div class=line>41</div><div class=line>42</div><div class=line>43</div><div class=line>44</div><div class=line>45</div><div class=line>46</div><div class=line>47</div><div class=line>48</div><div class=line>49</div><div class=line>50</div><div class=line>51</div><div class=line>52</div><div class=line>53</div><div class=line>54</div><div class=line>55</div><div class=line>56</div></pre></td><td class=code><pre><div class=line>project.tasks.whenTaskAdded { task -&gt;</div><div class=line>    if(task.name.contains(&apos;AndroidTest&apos;)){</div><div class=line>        task.enabled = false</div><div class=line>    }</div><div class=line>    android.applicationVariants.all{ variant -&gt;</div><div class=line>        if(task.name.contains(&quot;Debug&quot;)){</div><div class=line>            logger.log(LogLevel.INFO,&quot;Debug task&#x8FC7;&#x6EE4;${task.name}&quot;);</div><div class=line>        }else if(task.name==&quot;merge${variant.name.capitalize()}Assets&quot;){</div><div class=line>            logger.quiet(&quot;^^^^^^^^^^^^^^merge${variant.name.capitalize()}Assets&quot;)</div><div class=line>            task.doLast {</div><div class=line>                println &quot;cowboy &quot; +buildDir.absolutePath</div><div class=line>                String path =buildDir.absolutePath+&quot;\\intermediates\\assets\\&quot;+variant.name.capitalize()-&quot;Release&quot;+&quot;\\release&quot;</div><div class=line>                logger.quiet(&quot;^^^^^^^^^^^^^^${project.name} assemble projectDir ${project.projectDir.absolutePath}&quot;)</div><div class=line>                if(new File(path).exists()) {</div><div class=line>                    copyFile(&quot;${channelFlavors}_build_app.properties&quot;,&quot;build_app.properties&quot;,rootProject.getRootDir().getAbsolutePath()+&quot;/gradle&quot;, path)</div><div class=line>                }</div><div class=line>            }</div><div class=line>        }else if(task.name==&quot;merge${variant.name.capitalize()}Resources&quot;){</div><div class=line>            logger.quiet(&quot;^^^^^^^^^^^^^^merge${variant.name.capitalize()}Resources&quot;)</div><div class=line>            task.doFirst {</div><div class=line>                String valuePath = projectDir.absolutePath+&quot;\\res\\values\\strings.xml&quot;</div><div class=line>                File valueFile =new File(valuePath);</div><div class=line>                if(valueFile.exists()){</div><div class=line>                    def text =valueFile.text.replaceAll(&quot;&lt;string name=\&quot;app_name\&quot;&gt;.*&lt;/string&gt;&quot;,&quot;&lt;string name=\&quot;app_name\&quot;&gt;&quot;+appName+&quot;&lt;/string&gt;&quot;)</div><div class=line>                    valueFile.write(text,&quot;UTF-8&quot;)</div><div class=line>                }</div><div class=line>            }</div><div class=line>//            task.doLast {</div><div class=line>//                String path = buildDir.absolutePath+&quot;\\intermediates\\res\\merged\\zenGame\\release\\drawable-xxhdpi-v4&quot;;</div><div class=line>//                logger.quiet(&quot;^^^^^^^^^^^^^^${project.name} assemble projectDir ${project.projectDir.absolutePath}&quot;)</div><div class=line>//                if (new File(path).exists()) {</div><div class=line>//                    copyFile(&quot;ic_launcher.png&quot;,&quot;ic_launcher.png&quot;,&quot;E:\\ssd&quot;, path)</div><div class=line>//                }</div><div class=line>//            }</div><div class=line>        }else if(task.name == &quot;process${variant.name.capitalize()}Manifest&quot;){</div><div class=line>            task.doLast {</div><div class=line>                String str = buildDir.absolutePath+&quot;\\intermediates\\manifests\\full\\&quot;+variant.name.capitalize()-&quot;Release&quot;+&quot;\\release\\AndroidManifest.xml&quot;</div><div class=line>                logger.quiet(&quot;^^^^^^^^^^^^^^${project.name} cowboy ${variant.name.capitalize()}Manifest&quot;)</div><div class=line>                File valueFile =new File(str)</div><div class=line>                if(valueFile.exists()){</div><div class=line>                    def text = valueFile.text;</div><div class=line>                    map.each {key,value -&gt;</div><div class=line>                        text =text.replaceAll(&quot;START_REPLACE_&quot;+key+&quot;_END_REPLACE&quot;,value)</div><div class=line>                    }</div><div class=line>                    valueFile.write(text,&quot;UTF-8&quot;)</div><div class=line></div><div class=line>                    updateManifestXml(str)</div><div class=line>                    println &quot;cowboy to stop&quot;</div><div class=line>//                    throw new GradleException(&quot;cowboy to stop &quot;)</div><div class=line>                }</div><div class=line>            }</div><div class=line>        }</div><div class=line></div><div class=line></div><div class=line>    }</div><div class=line>}</div></pre></td></tr></table></figure></div><div></div><div></div><footer class=post-footer><div class=post-tags><a href="/tags/gradle/" rel=tag>#gradle</a> <a href="/tags/groovy/" rel=tag>#groovy</a></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href="/2016/03/25/2016书籍清单/" rel=next title=2016书籍清单><i class="fa fa-chevron-left"></i> 2016书籍清单</a></div><div class="post-nav-prev post-nav-item"><a href="/2016/09/13/theme-next内嵌标签/" rel=prev title=theme-next内嵌标签>theme-next内嵌标签 <i class="fa fa-chevron-right"></i></a></div></div></footer></article><div class=post-spread></div></div></div><div class=comments id=comments><div class=ds-thread data-thread-key="2016/07/04/gradle-学习心得/" data-title=gradle学习心得，记录 data-url="http://whhqhy.github.io/2016/07/04/gradle-学习心得/"></div></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target=post-toc-wrap>文章目录</li><li class=sidebar-nav-overview data-target=site-overview>站点概览</li></ul><section class="site-overview sidebar-panel"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/images/avatar.png alt=whhqhy><p class=site-author-name itemprop=name>whhqhy</p><p class="site-description motion-element" itemprop=description>耐得住寂寞，守得了花开。</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/archives><span class=site-state-item-count>9</span> <span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories><span class=site-state-item-count>7</span> <span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags><span class=site-state-item-count>10</span> <span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/whhqhy target=_blank title=GitHub><i class="fa fa-fw fa-github"></i> GitHub</a></span></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class=post-toc><div class=post-toc-content><ol class=nav><li class="nav-item nav-level-1"><a class=nav-link href=#一、gradle工作流><span class=nav-number>1.</span> <span class=nav-text>一、gradle工作流</span></a><ol class=nav-child><li class="nav-item nav-level-2"><a class=nav-link href=#读取manifest中versionName><span class=nav-number>1.1.</span> <span class=nav-text>读取manifest中versionName</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#为所有子工程添加公共方法><span class=nav-number>1.2.</span> <span class=nav-text>为所有子工程添加公共方法</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#将依赖扩展和参数抽离到新的脚本><span class=nav-number>1.3.</span> <span class=nav-text>将依赖扩展和参数抽离到新的脚本</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#自定义渠道名称><span class=nav-number>1.4.</span> <span class=nav-text>自定义渠道名称</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#xml添加，删除，更新，查询><span class=nav-number>1.5.</span> <span class=nav-text>xml添加，删除，更新，查询</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#添加声明周期hook，替换构建apk中资源文件><span class=nav-number>1.6.</span> <span class=nav-text>添加声明周期hook，替换构建apk中资源文件</span></a></li></ol></li></ol></div></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright>&copy; <span itemprop=copyrightYear>2016</span> <span class=with-love><i class="fa fa-heart"></i></span> <span class=author itemprop=copyrightHolder>whhqhy</span></div><div class=powered-by>来自 <a class=theme-link href=https://hexo.io>Hexo</a></div><div class=theme-info>感谢 - <a class=theme-link href=https://github.com/iissnan/hexo-theme-next>NexT.Mist</a></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i></div></div><script type=text/javascript>
+</script>
+
+
+
+
+  <link rel="canonical" href="http://whhqhy.github.io/2016/07/04/gradle-学习心得/"/>
+
+  <title> gradle学习心得，记录 | 我的哲思 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">我的哲思</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                gradle学习心得，记录
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-04T18:55:41+08:00" content="2016-07-04">
+              2016-07-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Gradle/" itemprop="url" rel="index">
+                    <span itemprop="name">Gradle</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/04/gradle-学习心得/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/04/gradle-学习心得/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>hook ,apply from<br><a id="more"></a></p>
+<hr>
+<h1 id="&#x4E00;&#x3001;gradle&#x5DE5;&#x4F5C;&#x6D41;"><a href="#&#x4E00;&#x3001;gradle&#x5DE5;&#x4F5C;&#x6D41;" class="headerlink" title="&#x4E00;&#x3001;gradle&#x5DE5;&#x4F5C;&#x6D41;"></a>&#x4E00;&#x3001;gradle&#x5DE5;&#x4F5C;&#x6D41;</h1><p>&#x5177;&#x4F53;&#x63CF;&#x8FF0;&#x6709;&#x7A7A;&#x518D;&#x5199;</p>
+<p><img src="/2016/07/04/gradle-&#x5B66;&#x4E60;&#x5FC3;&#x5F97;/gradle work push.png" alt="gradle&#x5DE5;&#x4F5C;&#x6D41;"></p>
+<h2 id="&#x8BFB;&#x53D6;manifest&#x4E2D;versionName"><a href="#&#x8BFB;&#x53D6;manifest&#x4E2D;versionName" class="headerlink" title="&#x8BFB;&#x53D6;manifest&#x4E2D;versionName"></a>&#x8BFB;&#x53D6;manifest&#x4E2D;versionName</h2><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">def</span> getVersionNameAdvanced(Project project){</div><div class="line">    <span class="keyword">def</span> xmlFile = project.file(<span class="string">&quot;AndroidManifest.xml&quot;</span>)</div><div class="line">    <span class="keyword">def</span> rootManifest = <span class="keyword">new</span> XmlSlurper().parse(xmlFile)</div><div class="line">    <span class="keyword">return</span> rootManifest[<span class="string">&apos;@android:versionName&apos;</span>]</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="&#x4E3A;&#x6240;&#x6709;&#x5B50;&#x5DE5;&#x7A0B;&#x6DFB;&#x52A0;&#x516C;&#x5171;&#x65B9;&#x6CD5;"><a href="#&#x4E3A;&#x6240;&#x6709;&#x5B50;&#x5DE5;&#x7A0B;&#x6DFB;&#x52A0;&#x516C;&#x5171;&#x65B9;&#x6CD5;" class="headerlink" title="&#x4E3A;&#x6240;&#x6709;&#x5B50;&#x5DE5;&#x7A0B;&#x6DFB;&#x52A0;&#x516C;&#x5171;&#x65B9;&#x6CD5;"></a>&#x4E3A;&#x6240;&#x6709;&#x5B50;&#x5DE5;&#x7A0B;&#x6DFB;&#x52A0;&#x516C;&#x5171;&#x65B9;&#x6CD5;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">subprojects{</div><div class="line">    logger.log(LogLevel.INFO,&apos;Config for &apos;+project.name)</div><div class="line">    apply from: rootProject.getRootDir().getAbsolutePath()+&apos;/utils.gradle&apos;</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="&#x5C06;&#x4F9D;&#x8D56;&#x6269;&#x5C55;&#x548C;&#x53C2;&#x6570;&#x62BD;&#x79BB;&#x5230;&#x65B0;&#x7684;&#x811A;&#x672C;"><a href="#&#x5C06;&#x4F9D;&#x8D56;&#x6269;&#x5C55;&#x548C;&#x53C2;&#x6570;&#x62BD;&#x79BB;&#x5230;&#x65B0;&#x7684;&#x811A;&#x672C;" class="headerlink" title="&#x5C06;&#x4F9D;&#x8D56;&#x6269;&#x5C55;&#x548C;&#x53C2;&#x6570;&#x62BD;&#x79BB;&#x5230;&#x65B0;&#x7684;&#x811A;&#x672C;"></a>&#x5C06;&#x4F9D;&#x8D56;&#x6269;&#x5C55;&#x548C;&#x53C2;&#x6570;&#x62BD;&#x79BB;&#x5230;&#x65B0;&#x7684;&#x811A;&#x672C;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">config.gradle</div><div class="line"></div><div class="line">apply plugin: &apos;com.android.application&apos;</div><div class="line"></div><div class="line">def addExtendsDependencies(){</div><div class="line">    dependencies {</div><div class="line">        compile(name: &apos;CommonLib-1.0-release&apos;, ext: &apos;aar&apos;)</div><div class="line">        compile(name: &apos;Drawer-1.0-release&apos;, ext: &apos;aar&apos;)</div><div class="line"></div><div class="line">    }</div><div class="line"></div><div class="line">    repositories{</div><div class="line">        flatDir{</div><div class="line">            dirs &apos;E:\\myAar&apos;</div><div class="line">       }</div><div class="line">    }</div><div class="line">}</div><div class="line">//&#x5C06;&#x51FD;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;extra&#x5C5E;&#x6027;&#x4E2D;&#x53BB;&#xFF0C;&#x8FD9;&#x6837;&#xFF0C;&#x52A0;&#x8F7D;utils.gradle&#x7684;Project&#x5C31;&#x80FD;&#x8C03;&#x7528;&#x6B64;&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x4E86;</div><div class="line">ext{</div><div class="line">    addExtendsDependencies = this.&amp;addExtendsDependencies</div><div class="line">    appName = &quot;&#x5929;&#x5929;&#x6597;&#x5730;&#x4E3B;&#x771F;&#x4EBA;&#x7248;&quot;</div><div class="line">}</div><div class="line"></div><div class="line">build.gradle</div><div class="line"></div><div class="line">apply from: rootProject.getRootDir().getAbsolutePath()+&quot;/gradle/${channelFlavors}Config.gradle&quot;</div><div class="line"></div><div class="line">dependencies {</div><div class="line">    compile fileTree(dir: &apos;libs&apos;, include: &apos;*.jar&apos;)</div><div class="line">    addExtendsDependencies()</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x6E20;&#x9053;&#x540D;&#x79F0;"><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x6E20;&#x9053;&#x540D;&#x79F0;" class="headerlink" title="&#x81EA;&#x5B9A;&#x4E49;&#x6E20;&#x9053;&#x540D;&#x79F0;"></a>&#x81EA;&#x5B9A;&#x4E49;&#x6E20;&#x9053;&#x540D;&#x79F0;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">productFlavors{</div><div class="line">        &quot;${channelFlavors}&quot;{</div><div class="line">            applicationId packageName</div><div class="line">        }</div><div class="line">    }</div></pre></td></tr></table></figure>
+<h2 id="xml&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;&#xFF0C;&#x66F4;&#x65B0;&#xFF0C;&#x67E5;&#x8BE2;"><a href="#xml&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;&#xFF0C;&#x66F4;&#x65B0;&#xFF0C;&#x67E5;&#x8BE2;" class="headerlink" title="xml&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;&#xFF0C;&#x66F4;&#x65B0;&#xFF0C;&#x67E5;&#x8BE2;"></a>xml&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;&#xFF0C;&#x66F4;&#x65B0;&#xFF0C;&#x67E5;&#x8BE2;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line">def void updateManifestXml(def path){</div><div class="line">    File file = new File(path)</div><div class="line"></div><div class="line">    def doc = DOMBuilder.parse(new StringReader(file.text))</div><div class="line">    def root = doc.documentElement</div><div class="line">    use(groovy.xml.dom.DOMCategory) {</div><div class="line">        //&#x79FB;&#x9664;&#x6389;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;intent-filter &#x4EE5;&#x53CA; &#x57FA;&#x5730;&#x6807;&#x5FD7;&#x7684;intent-filter</div><div class="line">        removeIntentFilterByAction_Categroy(root,&quot;android.intent.action.MAIN&quot;,&quot;android.intent.category.LAUNCHER&quot;)</div><div class="line">        removeIntentFilterByAction_Categroy(root,&quot;android.intent.action.CHINAMOBILE_OMS_GAME&quot;,&quot;android.intent.category.CHINAMOBILE_GAMES&quot;)</div><div class="line"></div><div class="line"></div><div class="line">        // &#x6839;&#x636E;&#x4E0D;&#x540C;&#x542F;&#x52A8;Activity&#x6DFB;&#x52A0;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;</div><div class="line">        if(hasLoginActivity){</div><div class="line">            // LoginAcitivity &#x95EA;&#x5C4F;&#x9875;&#x542F;&#x52A8;</div><div class="line">            // 1. &#x542F;&#x52A8;&#x9875;&#x6A2A;&#x7AD6;&#x5C4F;&#x8BBE;&#x7F6E;</div><div class="line">            // 2. &#x542F;&#x52A8;&#x9875;&#x4E3B;&#x9898;&#x8BBE;&#x7F6E;</div><div class="line">            //def androidMap = [&quot;android:screenOrientation&quot;:&quot;landscape&quot;,</div><div class="line">            //           &quot;android:theme&quot;:&quot;@style/GameTheme&quot;]</div><div class="line">            if(androidMap.size()&gt;0){</div><div class="line">                replaceActivityAttributes(root,androidMap)</div><div class="line">            }</div><div class="line">            // 3. LoginActivity &#x6DFB;&#x52A0;&#x542F;&#x52A8;&#x9879; &#x548C; &#x57FA;&#x5730;&#x6807;&#x5FD7;</div><div class="line">            addMainIntentFilter(root,&quot;com.zengame.basic.LoginActivity&quot;)</div><div class="line">            addAndGameIntentFilter(root,&quot;com.zengame.basic.LoginActivity&quot;)</div><div class="line">        }else{</div><div class="line">            // GameActivity &#x542F;&#x52A8;</div><div class="line">            // 1. &#x79FB;&#x9664;&#x6389;LoginActivity</div><div class="line">            removeActivityByName(root,&quot;com.zengame.basic.LoginActivity&quot;)</div><div class="line">            // 2. GameActivity &#x6DFB;&#x52A0;&#x542F;&#x52A8;&#x9879; &#x548C; &#x57FA;&#x5730;&#x6807;&#x5FD7;</div><div class="line">            addMainIntentFilter(root,&quot;com.zengame.basic.GameActivity&quot;)</div><div class="line">            addAndGameIntentFilter(root,&quot;com.zengame.basic.GameActivity&quot;)</div><div class="line">        }</div><div class="line"></div><div class="line">    }</div><div class="line"></div><div class="line">    def result = XmlUtil.serialize(root)</div><div class="line">    file.write(result,&quot;UTF-8&quot;)</div><div class="line">   // println result</div><div class="line">}</div><div class="line"></div><div class="line">def void addMainIntentFilter(def root,String name){</div><div class="line">    root.getElementsByTagName(&quot;activity&quot;).each {node -&gt;</div><div class="line">        if(node.attributes.getNamedItem(&quot;android:name&quot;).nodeValue==name){</div><div class="line">            org.w3c.dom.Element element = node.appendNode(&quot;intent-filter&quot;)</div><div class="line">            element.appendNode(&quot;action&quot;,[&quot;android:name&quot;:&quot;android.intent.action.MAIN&quot;])</div><div class="line">            element.appendNode(&quot;category&quot;,[&quot;android:name&quot;:&quot;android.intent.category.LAUNCHER&quot;])</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line">def void addAndGameIntentFilter(def root,String name){</div><div class="line">    root.getElementsByTagName(&quot;activity&quot;).each {node -&gt;</div><div class="line">        if(node.attributes.getNamedItem(&quot;android:name&quot;).nodeValue==name){</div><div class="line">            org.w3c.dom.Element element = node.appendNode(&quot;intent-filter&quot;)</div><div class="line">            element.appendNode(&quot;action&quot;,[&quot;android:name&quot;:&quot;android.intent.action.CHINAMOBILE_OMS_GAME&quot;])</div><div class="line">            element.appendNode(&quot;category&quot;,[&quot;android:name&quot;:&quot;android.intent.category.CHINAMOBILE_GAMES&quot;])</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line">def void removeActivityByName(def root,String name){</div><div class="line">    root.getElementsByTagName(&quot;activity&quot;).each {node -&gt;</div><div class="line">        if(node.attributes.getNamedItem(&quot;android:name&quot;).nodeValue==name){</div><div class="line">            node.parentNode.removeChild(node)</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line">def void replaceActivityAttributes(def root,def map){</div><div class="line">    root.getElementsByTagName(&quot;activity&quot;).each {node -&gt;</div><div class="line">        if(node.attributes.getNamedItem(&quot;android:name&quot;).nodeValue==&quot;com.zengame.basic.LoginActivity&quot;){</div><div class="line">            map.each {key,value -&gt;</div><div class="line">                node.attributes.getNamedItem(key).setNodeValue(value)</div><div class="line">            }</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line">def void removeIntentFilterByAction_Categroy(def root,String actionValue,String categroyValue){</div><div class="line">    root.getElementsByTagName(&quot;intent-filter&quot;).each {node -&gt;</div><div class="line">        boolean hasMain</div><div class="line">        boolean hasLuancher</div><div class="line">        node.childNodes.each { childNode -&gt;</div><div class="line">            if (childNode.nodeName == &quot;action&quot; &amp;&amp; actionValue == childNode.attributes.getNamedItem(&quot;android:name&quot;).nodeValue) {</div><div class="line">                hasMain = true</div><div class="line">            }</div><div class="line">            if (childNode.nodeName == &quot;category&quot; &amp;&amp; categroyValue == childNode.attributes.getNamedItem(&quot;android:name&quot;).nodeValue) {</div><div class="line">                hasLuancher = true</div><div class="line">            }</div><div class="line">        }</div><div class="line">        if (hasMain &amp;&amp; hasLuancher) {</div><div class="line">            node.parentNode.removeChild(node)</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="&#x6DFB;&#x52A0;&#x58F0;&#x660E;&#x5468;&#x671F;hook&#xFF0C;&#x66FF;&#x6362;&#x6784;&#x5EFA;apk&#x4E2D;&#x8D44;&#x6E90;&#x6587;&#x4EF6;"><a href="#&#x6DFB;&#x52A0;&#x58F0;&#x660E;&#x5468;&#x671F;hook&#xFF0C;&#x66FF;&#x6362;&#x6784;&#x5EFA;apk&#x4E2D;&#x8D44;&#x6E90;&#x6587;&#x4EF6;" class="headerlink" title="&#x6DFB;&#x52A0;&#x58F0;&#x660E;&#x5468;&#x671F;hook&#xFF0C;&#x66FF;&#x6362;&#x6784;&#x5EFA;apk&#x4E2D;&#x8D44;&#x6E90;&#x6587;&#x4EF6;"></a>&#x6DFB;&#x52A0;&#x58F0;&#x660E;&#x5468;&#x671F;hook&#xFF0C;&#x66FF;&#x6362;&#x6784;&#x5EFA;apk&#x4E2D;&#x8D44;&#x6E90;&#x6587;&#x4EF6;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">project.tasks.whenTaskAdded { task -&gt;</div><div class="line">    if(task.name.contains(&apos;AndroidTest&apos;)){</div><div class="line">        task.enabled = false</div><div class="line">    }</div><div class="line">    android.applicationVariants.all{ variant -&gt;</div><div class="line">        if(task.name.contains(&quot;Debug&quot;)){</div><div class="line">            logger.log(LogLevel.INFO,&quot;Debug task&#x8FC7;&#x6EE4;${task.name}&quot;);</div><div class="line">        }else if(task.name==&quot;merge${variant.name.capitalize()}Assets&quot;){</div><div class="line">            logger.quiet(&quot;^^^^^^^^^^^^^^merge${variant.name.capitalize()}Assets&quot;)</div><div class="line">            task.doLast {</div><div class="line">                println &quot;cowboy &quot; +buildDir.absolutePath</div><div class="line">                String path =buildDir.absolutePath+&quot;\\intermediates\\assets\\&quot;+variant.name.capitalize()-&quot;Release&quot;+&quot;\\release&quot;</div><div class="line">                logger.quiet(&quot;^^^^^^^^^^^^^^${project.name} assemble projectDir ${project.projectDir.absolutePath}&quot;)</div><div class="line">                if(new File(path).exists()) {</div><div class="line">                    copyFile(&quot;${channelFlavors}_build_app.properties&quot;,&quot;build_app.properties&quot;,rootProject.getRootDir().getAbsolutePath()+&quot;/gradle&quot;, path)</div><div class="line">                }</div><div class="line">            }</div><div class="line">        }else if(task.name==&quot;merge${variant.name.capitalize()}Resources&quot;){</div><div class="line">            logger.quiet(&quot;^^^^^^^^^^^^^^merge${variant.name.capitalize()}Resources&quot;)</div><div class="line">            task.doFirst {</div><div class="line">                String valuePath = projectDir.absolutePath+&quot;\\res\\values\\strings.xml&quot;</div><div class="line">                File valueFile =new File(valuePath);</div><div class="line">                if(valueFile.exists()){</div><div class="line">                    def text =valueFile.text.replaceAll(&quot;&lt;string name=\&quot;app_name\&quot;&gt;.*&lt;/string&gt;&quot;,&quot;&lt;string name=\&quot;app_name\&quot;&gt;&quot;+appName+&quot;&lt;/string&gt;&quot;)</div><div class="line">                    valueFile.write(text,&quot;UTF-8&quot;)</div><div class="line">                }</div><div class="line">            }</div><div class="line">//            task.doLast {</div><div class="line">//                String path = buildDir.absolutePath+&quot;\\intermediates\\res\\merged\\zenGame\\release\\drawable-xxhdpi-v4&quot;;</div><div class="line">//                logger.quiet(&quot;^^^^^^^^^^^^^^${project.name} assemble projectDir ${project.projectDir.absolutePath}&quot;)</div><div class="line">//                if (new File(path).exists()) {</div><div class="line">//                    copyFile(&quot;ic_launcher.png&quot;,&quot;ic_launcher.png&quot;,&quot;E:\\ssd&quot;, path)</div><div class="line">//                }</div><div class="line">//            }</div><div class="line">        }else if(task.name == &quot;process${variant.name.capitalize()}Manifest&quot;){</div><div class="line">            task.doLast {</div><div class="line">                String str = buildDir.absolutePath+&quot;\\intermediates\\manifests\\full\\&quot;+variant.name.capitalize()-&quot;Release&quot;+&quot;\\release\\AndroidManifest.xml&quot;</div><div class="line">                logger.quiet(&quot;^^^^^^^^^^^^^^${project.name} cowboy ${variant.name.capitalize()}Manifest&quot;)</div><div class="line">                File valueFile =new File(str)</div><div class="line">                if(valueFile.exists()){</div><div class="line">                    def text = valueFile.text;</div><div class="line">                    map.each {key,value -&gt;</div><div class="line">                        text =text.replaceAll(&quot;START_REPLACE_&quot;+key+&quot;_END_REPLACE&quot;,value)</div><div class="line">                    }</div><div class="line">                    valueFile.write(text,&quot;UTF-8&quot;)</div><div class="line"></div><div class="line">                    updateManifestXml(str)</div><div class="line">                    println &quot;cowboy to stop&quot;</div><div class="line">//                    throw new GradleException(&quot;cowboy to stop &quot;)</div><div class="line">                }</div><div class="line">            }</div><div class="line">        }</div><div class="line"></div><div class="line"></div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/gradle/" rel="tag">#gradle</a>
+          
+            <a href="/tags/groovy/" rel="tag">#groovy</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/25/2016书籍清单/" rel="next" title="2016书籍清单">
+                <i class="fa fa-chevron-left"></i> 2016书籍清单
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/13/theme-next内嵌标签/" rel="prev" title="theme-next内嵌标签">
+                theme-next内嵌标签 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/04/gradle-学习心得/"
+           data-title="gradle学习心得，记录" data-url="http://whhqhy.github.io/2016/07/04/gradle-学习心得/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="whhqhy" />
+          <p class="site-author-name" itemprop="name">whhqhy</p>
+          <p class="site-description motion-element" itemprop="description">耐得住寂寞，守得了花开。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/whhqhy" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、gradle工作流"><span class="nav-number">1.</span> <span class="nav-text">一、gradle工作流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#读取manifest中versionName"><span class="nav-number">1.1.</span> <span class="nav-text">读取manifest中versionName</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为所有子工程添加公共方法"><span class="nav-number">1.2.</span> <span class="nav-text">为所有子工程添加公共方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将依赖扩展和参数抽离到新的脚本"><span class="nav-number">1.3.</span> <span class="nav-text">将依赖扩展和参数抽离到新的脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义渠道名称"><span class="nav-number">1.4.</span> <span class="nav-text">自定义渠道名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xml添加，删除，更新，查询"><span class="nav-number">1.5.</span> <span class="nav-text">xml添加，删除，更新，查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加声明周期hook，替换构建apk中资源文件"><span class="nav-number">1.6.</span> <span class="nav-text">添加声明周期hook，替换构建apk中资源文件</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">whhqhy</span>
+</div>
+
+<div class="powered-by">
+   来自 <a class="theme-link" href="https://hexo.io">Hexo</a> 
+</div>
+
+<div class="theme-info">
+  感谢 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
-</script><script type=text/javascript src="/vendors/jquery/index.js?v=2.1.3"></script><script type=text/javascript src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type=text/javascript src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type=text/javascript src="/vendors/velocity/velocity.min.js?v=1.2.1"></script><script type=text/javascript src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script><script type=text/javascript src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type=text/javascript src="/js/src/utils.js?v=5.0.1"></script><script type=text/javascript src="/js/src/motion.js?v=5.0.1"></script><script type=text/javascript src="/js/src/scrollspy.js?v=5.0.1"></script><script type=text/javascript src="/js/src/post-details.js?v=5.0.1"></script><script type=text/javascript src="/js/src/bootstrap.js?v=5.0.1"></script><script type=text/javascript>
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
     var duoshuoQuery = {short_name:"whhqhy"};
     (function() {
       var ds = document.createElement('script');
@@ -25,7 +647,22 @@
       (document.getElementsByTagName('head')[0]
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
-  </script><script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script><script src=/js/src/hook-duoshuo.js></script><script type=text/javascript>
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
     // Popup Window;
     var isfetched = false;
     // Search DB path;
@@ -152,4 +789,14 @@
     $('.popup').click(function(e){
       e.stopPropagation();
     });
-  </script></body></html>
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

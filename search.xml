@@ -214,8 +214,43 @@ README.txt
     <entry>
       <title><![CDATA[git学习]]></title>
       <url>http://whhqhy.github.io/2016/03/17/git%E5%AD%A6%E4%B9%A0/</url>
-      <content type="html"><![CDATA[<h1 id="&#x4E00;&#x3001;git&#x4F7F;&#x7528;&#x7247;&#x6BB5;"><a href="#&#x4E00;&#x3001;git&#x4F7F;&#x7528;&#x7247;&#x6BB5;" class="headerlink" title="&#x4E00;&#x3001;git&#x4F7F;&#x7528;&#x7247;&#x6BB5;"></a>&#x4E00;&#x3001;git&#x4F7F;&#x7528;&#x7247;&#x6BB5;</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">&#x521D;&#x59CB;&#x5316;</div><div class="line">git init</div><div class="line"></div><div class="line">&#x67E5;&#x770B;&#x4ED3;&#x5E93;&#x72B6;&#x6001;</div><div class="line">git status</div><div class="line"></div><div class="line">&#x67E5;&#x770B;log&#x65E5;&#x5FD7;</div><div class="line">git log </div><div class="line">git log --pretty=oneline</div><div class="line"></div><div class="line">&#x8FD8;&#x539F;&#x4ED3;&#x5E93;</div><div class="line">git reset --hard HEAD^</div><div class="line"></div><div class="line">&#x67E5;&#x770B;&#x5386;&#x53F2;id</div><div class="line">git reflog &#x67E5;&#x770B;commit_id</div><div class="line"></div><div class="line">&#x53EF;&#x4EE5;&#x4E22;&#x5F03;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x4FEE;&#x6539;</div><div class="line">git checkout -- file</div><div class="line"></div><div class="line">&#x56DE;&#x5230;&#x6700;&#x8FD1;&#x4E00;&#x6B21;git commit&#x6216;git add&#x65F6;&#x7684;&#x72B6;&#x6001;</div><div class="line">git checkout -- readme.txt</div><div class="line"></div><div class="line">&#x628A;&#x6682;&#x5B58;&#x533A;&#x7684;&#x4FEE;&#x6539;&#x64A4;&#x9500;&#x6389;&#xFF08;unstage&#xFF09;&#xFF0C;&#x91CD;&#x65B0;&#x653E;&#x56DE;&#x5DE5;&#x4F5C;&#x533A;&#xFF1A;</div><div class="line">git reset HEAD readme.txt</div><div class="line"></div><div class="line">&#x5220;&#x9664;&#x6307;&#x5B9A;&#x6587;&#x4EF6;</div><div class="line">git rm test.txt</div><div class="line"></div><div class="line">&#x67E5;&#x770B;&#x6539;&#x53D8;</div><div class="line">git diff</div><div class="line"></div><div class="line">&#x67E5;&#x770B;&#x6587;&#x672C;&#x5185;&#x5BB9;</div><div class="line">cat readme.txt</div><div class="line"></div><div class="line">&#x67E5;&#x770B;&#x5206;&#x652F;</div><div class="line">git branch</div><div class="line"></div><div class="line">&#x521B;&#x5EFA;&#x5206;&#x652F;</div><div class="line">git branch &lt;name&gt;</div><div class="line"></div><div class="line">&#x5207;&#x6362;&#x5206;&#x652F;</div><div class="line">git checkout &lt;name&gt;</div><div class="line"></div><div class="line">&#x521B;&#x5EFA;+&#x5207;&#x6362;&#x5206;&#x652F;</div><div class="line">git checkout -b &lt;name&gt;</div><div class="line"></div><div class="line">&#x5408;&#x5E76;&#x67D0;&#x5206;&#x652F;&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;</div><div class="line">git merge &lt;name&gt;</div><div class="line"></div><div class="line">&#x5220;&#x9664;&#x5206;&#x652F;</div><div class="line">git branch -d &lt;name&gt;</div></pre></td></tr></table></figure>
-<h1 id="&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;"><a href="#&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;" class="headerlink" title="&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;"></a>&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">git add README.md || git add --all</div><div class="line">git commit -m &quot;first commit&quot;</div><div class="line">git remote add origin https://github.com/whhqhy/git.git</div><div class="line">git push -u origin master</div><div class="line"></div><div class="line">git clone git@github.com:whhqhy/buildApk.git</div></pre></td></tr></table></figure>]]></content>
+      <content type="html"><![CDATA[<h1 id="&#x4E00;&#x3001;git&#x4F7F;&#x7528;&#x7247;&#x6BB5;"><a href="#&#x4E00;&#x3001;git&#x4F7F;&#x7528;&#x7247;&#x6BB5;" class="headerlink" title="&#x4E00;&#x3001;git&#x4F7F;&#x7528;&#x7247;&#x6BB5;"></a>&#x4E00;&#x3001;git&#x4F7F;&#x7528;&#x7247;&#x6BB5;</h1><ul>
+<li><p>&#x521D;&#x59CB;&#x5316; <code>git init</code></p>
+</li>
+<li><p>&#x67E5;&#x770B;&#x4ED3;&#x5E93;&#x72B6;&#x6001; <code>git status</code></p>
+</li>
+<li><p>&#x67E5;&#x770B;log&#x65E5;&#x5FD7; <code>git log  || git log --pretty=oneline</code></p>
+</li>
+<li><p>&#x8FD8;&#x539F;&#x4ED3;&#x5E93; <code>git reset --hard HEAD^</code></p>
+</li>
+<li><p>&#x67E5;&#x770B;&#x5386;&#x53F2;id <code>git reflog &#x67E5;&#x770B;commit_id</code></p>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x4E22;&#x5F03;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x4FEE;&#x6539; <code>git checkout -- file</code></p>
+</li>
+<li><p>&#x56DE;&#x5230;&#x6700;&#x8FD1;&#x4E00;&#x6B21;git commit&#x6216;git add&#x65F6;&#x7684;&#x72B6;&#x6001; <code>git checkout -- readme.txt</code></p>
+</li>
+<li><p>&#x628A;&#x6682;&#x5B58;&#x533A;&#x7684;&#x4FEE;&#x6539;&#x64A4;&#x9500;&#x6389;&#xFF08;unstage&#xFF09;&#xFF0C;&#x91CD;&#x65B0;&#x653E;&#x56DE;&#x5DE5;&#x4F5C;&#x533A;&#xFF1A;<code>git reset HEAD readme.txt</code></p>
+</li>
+<li><p>&#x5220;&#x9664;&#x6307;&#x5B9A;&#x6587;&#x4EF6; <code>git rm test.txt</code></p>
+</li>
+<li><p>&#x67E5;&#x770B;&#x6539;&#x53D8; <code>git diff</code></p>
+</li>
+<li><p>&#x67E5;&#x770B;&#x6587;&#x672C;&#x5185;&#x5BB9; <code>cat readme.txt</code></p>
+</li>
+<li><p>&#x67E5;&#x770B;&#x5206;&#x652F; <code>git branch</code></p>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x5206;&#x652F; <code>git branch &lt;name&gt;</code></p>
+</li>
+<li><p>&#x5207;&#x6362;&#x5206;&#x652F; <code>git checkout &lt;name&gt;</code></p>
+</li>
+<li><p>&#x521B;&#x5EFA;+&#x5207;&#x6362;&#x5206;&#x652F; <code>git checkout -b &lt;name&gt;</code></p>
+</li>
+<li><p>&#x5408;&#x5E76;&#x67D0;&#x5206;&#x652F;&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F; <code>git merge &lt;name&gt;</code></p>
+</li>
+<li><p>&#x5220;&#x9664;&#x5206;&#x652F; <code>git branch -d &lt;name&gt;</code></p>
+</li>
+</ul>
+<h1 id="&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;"><a href="#&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;" class="headerlink" title="&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;"></a>&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;</h1><p><br>git init<br>git add README.md || git add &#x2013;all<br>git commit -m &#x201C;first commit&#x201D;<br>git remote add origin <a href="https://github.com/whhqhy/git.git" target="_blank" rel="external">https://github.com/whhqhy/git.git</a><br>git push -u origin master<br>git pull origin master<br>git clone git@github.com:whhqhy/buildApk.git<br></p>]]></content>
     </entry>
     
     <entry>
