@@ -52,3 +52,20 @@ export http_proxy="$HTTP_PROXY"
 export ftp_proxy="$FTP_PROXY" 
 export https_proxy="$HTTPS_PROXY" 
 ```
+
+## windowws cmd 添加代理
+使用set http_proxy方式直接设置代理即可
+```
+C:\Users\Administrator>set http_proxy=http://localhost:8118
+
+C:\Users\Administrator>set https_proxy=https://localhost:8118
+
+C:\Users\Administrator>curl www.google.com
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>302 Moved</TITLE></HEAD><BODY>
+<H1>302 Moved</H1>
+The document has moved
+<A HREF="http://www.google.co.jp/?gfe_rd=cr&amp;ei=D3_sV9OANNKQ8QfqoqXQAw">here<
+/A>.
+</BODY></HTML>
+```
