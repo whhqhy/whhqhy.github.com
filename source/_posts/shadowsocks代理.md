@@ -40,3 +40,15 @@ description: shadowsocks代理下载google源码
 	* 方法二
 		* git config --global --unset http.proxy 
 		* git config --global --unset https.proxy
+
+## cygwin添加代理
+找到cygwin安装目录，home下的.bashrc文件，在里面添加如下代理即可
+```
+export HTTP_PROXY='http://localhost:8118'
+export FTP_PROXY="$HTTP_PROXY" 
+export HTTPS_PROXY="$HTTP_PROXY" 
+
+export http_proxy="$HTTP_PROXY" 
+export ftp_proxy="$FTP_PROXY" 
+export https_proxy="$HTTPS_PROXY" 
+```
