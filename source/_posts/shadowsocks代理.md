@@ -69,3 +69,28 @@ The document has moved
 /A>.
 </BODY></HTML>
 ```
+
+## Linux安装
+**安装图形版安hadowsocks**
+1. 安装add-apt-repository，可执行`sudo add-apt-repository`,如果提示找不到命令可以试试`sudo apt-get install software-properties-common`
+2. 安装shadowsocks-qt5，图形界面，可以扫描二维码添加代理，执行如下代码
+`sudo add-apt-repository ppa:hzwhuang/ss-qt5`
+`sudo apt-get update`
+`sudo apt-get install shadowsocks-qt5`
+
+**使用privoxy命令行穿墙**
+1. 安装`sudo apt-get install privoxy` 
+2. 配置`sudo vi /etc/privoxy/config`和windows版一样，打开socks5，`vi查找快捷键/字符串 n查找下一个`
+3. 开启服务 `sudo  service  privoxy start`
+4. 设置终端代理`export http_proxy='http://localhost:8118'`和`export https_proxy='https://localhost:8118'`
+5. 测试 curl www.google.com
+
+**chrome浏览器插件SwitchyOmega**
+暂未实验，可参考[chrome代理与android SDK代理](https://blog.phpgao.com/privoxy-shadowsocks.html)
+
+**curl安装**
+1. 下载安装包 `wget http://curl.haxx.se/download/curl-7.20.0.tar.gz`
+2. 解压到当前目录 `tar -zxf curl-7.20.0.tar.gz`,进入解压后的目录内`cd curl-7.20.0`
+3. 配置，指定安装的目录 `./configure`
+4. 编译 `make`
+5. 安装 `sudo make install`
