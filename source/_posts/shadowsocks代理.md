@@ -94,3 +94,15 @@ The document has moved
 3. 配置，指定安装的目录 `./configure`
 4. 编译 `make`
 5. 安装 `sudo make install`
+
+
+## 下载源码
+
+参考官方文档[官方链接](http://source.android.com/source/downloading.html)
+需要注意的点:
+- 默认情况下，获得了Android源代码是匿名的。为了防止过量使用的服务器，每个服务器的IP地址与一个配额关联。
+
+当与其他用户共享一个IP地址（例如访问来自超过了NAT防火墙的源库时），配额甚至可以触发常规使用模式（例如，如果许多用户同步来自同一IP地址的新客户在短期内）。
+
+在这种情况下，有可能使用认证访问，然后使用单独的配额为每个用户，而不管IP地址。具体参考源码网站
+- 出现error: unable to create file tests/P_str_escape/str\\escape.rs的解决办法[链接](http://blog.csdn.net/u013553529/article/details/50616725)
