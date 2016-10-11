@@ -86,7 +86,7 @@ The document has moved
 5. 测试 curl www.google.com
 
 **chrome浏览器插件SwitchyOmega**
-暂未实验，可参考[chrome代理与android SDK代理](https://blog.phpgao.com/privoxy-shadowsocks.html)
+暂未实验，可参考[chrome代理与android SDK代理](https://blog.phpgao.com/privoxy-shadowsocks.html),官方配置[代理软件设置](http://www.switchysharp.com/setting.html)
 
 **curl安装**
 1. 下载安装包 `wget http://curl.haxx.se/download/curl-7.20.0.tar.gz`
