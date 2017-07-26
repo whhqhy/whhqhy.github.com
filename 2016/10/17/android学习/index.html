@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android, Gradle" />
+  <meta name="keywords" content="android," />
 
 
 
@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="耐得住寂寞，守得了花开。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="我的哲思">
-<meta property="og:url" content="http://whhqhy.github.io/tags/sublime/index.html">
+<meta name="description" content="控件大小获取">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android学习">
+<meta property="og:url" content="http://whhqhy.github.io/2016/10/17/android学习/index.html">
 <meta property="og:site_name" content="我的哲思">
-<meta property="og:description" content="耐得住寂寞，守得了花开。">
+<meta property="og:description" content="控件大小获取">
+<meta property="og:updated_time" content="2016-10-17T01:20:10.071Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的哲思">
-<meta name="twitter:description" content="耐得住寂寞，守得了花开。">
+<meta name="twitter:title" content="android学习">
+<meta name="twitter:description" content="控件大小获取">
 
 
 
@@ -113,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://whhqhy.github.io/tags/sublime/"/>
+  <link rel="canonical" href="http://whhqhy.github.io/2016/10/17/android学习/"/>
 
-  <title> 标签: sublime | 我的哲思 </title>
+  <title> android学习 | 我的哲思 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +137,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,46 +248,133 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        sublime
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                android学习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-17T09:08:16+08:00" content="2016-10-17">
+              2016-10-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/17/android学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/17/android学习/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x83B7;&#x5F97;&#x63A7;&#x4EF6;&#x7684;&#x5927;&#x5C0F;,&#x4F46;&#x662F;&#x5728;Activity&#x7684;onCreate()&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x4E2D;&#x8C03;&#x7528;getWidth()&#x548C;getHeight()&#x65B9;&#x6CD5;&#x5E76;&#x4E0D;&#x80FD;&#x83B7;&#x5F97;&#x63A7;&#x4EF6;&#x7684;&#x5BBD;&#x548C;&#x9AD8;&#xFF0C;&#x56E0;&#x4E3A;&#x6B64;&#x65F6;&#x6211;&#x4EEC;&#x7684;&#x754C;&#x9762;&#x5E76;&#x672A;&#x88AB;&#x7ED8;&#x5236;&#x5B8C;&#x6210;&#x3002;&#x4E0D;&#x8FC7;&#x6211;&#x4EEC;&#x5374;&#x53EF;&#x4EE5;&#x5728;onWindowFocusChanged(boolean hasFocus)&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E2D;&#x83B7;&#x5F97;&#x63A7;&#x4EF6;&#x7684;&#x5927;&#x5C0F;&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public void onWindowFocusChanged(boolean hasFocus) {</div><div class="line">    super.onWindowFocusChanged(hasFocus);</div><div class="line">    int height = headerTextView2.getHeight();</div><div class="line">    int width = headerTextView2.getWidth();</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<p>&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x7684;Activity&#x5728;&#x83B7;&#x5F97;&#x6216;&#x8005;&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;,&#x5B83;&#x662F;&#x8FD9;&#x4E2A;Activity&#x662F;&#x5426;&#x5BF9;&#x7528;&#x6237;&#x53EF;&#x89C1;&#x7684;&#x6700;&#x597D;&#x6807;&#x5FD7;&#x3002;<br>&#x90A3;&#x4E48;&#x5BF9;&#x4E8E;Fragment&#x53C8;&#x8BE5;&#x600E;&#x4E48;&#x529E;&#x5462;?Fragment&#x5E76;&#x672A;&#x63D0;&#x4F9B;&#x7C7B;&#x4F3C;onWindowFocusChanged&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x7528;&#x5230;ViewTreeObserver&#x4E86;&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">ViewTreeObserver observer = headerTextView.getViewTreeObserver();</div><div class="line">observer.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {</div><div class="line">    public boolean onPreDraw() {</div><div class="line">        if (!isMeasured) {</div><div class="line">            int layoutHeight = headerTextView.getMeasuredHeight();</div><div class="line">            isMeasured = true;</div><div class="line">        }</div><div class="line">        return true;</div><div class="line">    }</div><div class="line">});</div></pre></td></tr></table></figure></p>
+<p> &#x89E3;&#x91CA;&#xFF1A;&#x91CD;&#x5199;view&#x4E2D;&#x7684;onMeasure()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x7528;&#x6765;&#x8BA1;&#x7B97;view&#x7684;&#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x8981;&#x91CD;&#x5199;onMeasure()&#x4EE5; &#x540E;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x90A3;&#x4E2A;&#x65B9;&#x6CD5;&#x91CC;&#x9762;&#x83B7;&#x53D6;view&#x7684;&#x5927;&#x5C0F;&#x5C31;&#x884C;&#x4E86;&#x3002;&#x901A;&#x8FC7;&#x6D4B;&#x8BD5;&#xFF0C;&#x4E00;&#x4E2A;Activity&#x4E2D;&#xFF0C;&#x5404;&#x79CD;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x987A;&#x5E8F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x5176;&#x8C03;&#x7528;&#x987A;&#x5E8F;&#x4E3A;Activity.oncreate()&#x2192;Activity.onResume()&#x2192;<br>&#x2192;TestImageView.onMeasure()&#x2192;TestImageView.onLayout()&#x2192;onGlobalLayoutListener()&#x2192;<br>&#x2192;Activity.onWidnowFocusChanged()&#x2192;&#x2026;..&#x2192;<br>&#x2192;TextImageView.onDraw()</p>
+<p>&#x5F15;&#x7528;&#x81EA;&#xFF1A;<a href="http://www.xuebuyuan.com/1587193.html" target="_blank" rel="external">&#x8C03;&#x7528;&#x987A;&#x5E8F;</a></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/09/30/sublime-使用记录/" itemprop="url">
-              
-                <span itemprop="name">sublime 使用记录</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-30T15:12:00+08:00"
-              content="2016-09-30" >
-          09-30
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag">#android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/12/2d绘图/" rel="next" title="2d绘图">
+                <i class="fa fa-chevron-left"></i> 2d绘图
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -294,6 +382,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/17/android学习/"
+           data-title="android学习" data-url="http://whhqhy.github.io/2016/10/17/android学习/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -313,8 +409,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -375,6 +480,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -471,6 +587,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
