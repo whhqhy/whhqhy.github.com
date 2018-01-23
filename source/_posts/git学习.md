@@ -48,7 +48,7 @@ description: 一些git命令的记录，方便以后翻看
 # 二、实际操作
 <p>
 git init
-git add README.md || git add --all
+git add README.md || git add \-\-all
 git commit -m "first commit"
 git remote add origin https://github.com/whhqhy/git.git
 git push -u origin master

@@ -34,7 +34,7 @@ npm install hexo-deployer-git
 - 如果第一次安装，需要执行`npm install -g hexo-cli`
 
 # 四、 命令行推送到github
-添加所有改变到暂存区    
+添加所有改变到暂存区
 ```bash
 git add --all
 ```
@@ -63,3 +63,20 @@ Make sure post_asset_folder: true in your _config.yml.
 Just use ![logo](MacGesture2-Publish/logo.jpg) to insert logo.jpg.
 ```
 * [Hexo 官方文档](https://hexo.io/zh-cn/docs/)
+
+
+# 六、 BlueLake主题安装需要插件
+```
+cnpm install hexo-renderer-jade@0.3.0 --save
+cnpm install hexo-renderer-stylus --save
+cnpm install hexo-generator-json-content@2.2.0 --save
+```
+[BlueLake主题](http://chaoo.oschina.io/2016/12/29/BlueLake%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE.html)
+
+如果出现报错
+```
+(node:9488) [DEP0061] DeprecationWarning: fs.SyncWriteStream is deprecated.
+ERROR Plugin load failed: hexo-renderer-sass
+Error: Cannot find module 'node-sass'
+```
+可尝试安装 `cnpm install node-sass@latest`

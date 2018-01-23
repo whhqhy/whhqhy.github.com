@@ -4,11 +4,10 @@
 
 # Site
 title: 我的哲思
-subtitle: 
-description: 耐得住寂寞，守得了花开。
+subtitle: 耐得住寂寞，守得了花开。
+description:
 author: whhqhy
-language: zh-Hans
-timezone:
+language: zh-CN
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -63,8 +62,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
-## theme: hexo-theme-ttstyle
+# theme: next
+theme: BlueLake
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -78,3 +77,22 @@ duoshuo_shortname: whhqhy
 search:
   path: search.xml
   field: post
+
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true #文章标题
+    date: true #发表日期
+    path: true #路径
+    text: true #文本字段
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true #标签
