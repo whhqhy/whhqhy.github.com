@@ -642,6 +642,10 @@ README.txt
 <ul>
 <li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo &#x5B98;&#x65B9;&#x6587;&#x6863;</a></li>
 </ul>
+<h1 id="&#x516D;&#x3001;-BlueLake&#x4E3B;&#x9898;&#x5B89;&#x88C5;&#x9700;&#x8981;&#x63D2;&#x4EF6;"><a href="#&#x516D;&#x3001;-BlueLake&#x4E3B;&#x9898;&#x5B89;&#x88C5;&#x9700;&#x8981;&#x63D2;&#x4EF6;" class="headerlink" title="&#x516D;&#x3001; BlueLake&#x4E3B;&#x9898;&#x5B89;&#x88C5;&#x9700;&#x8981;&#x63D2;&#x4EF6;"></a>&#x516D;&#x3001; BlueLake&#x4E3B;&#x9898;&#x5B89;&#x88C5;&#x9700;&#x8981;&#x63D2;&#x4EF6;</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cnpm install hexo-renderer-jade@0.3.0 --save</div><div class="line">cnpm install hexo-renderer-stylus --save</div><div class="line">cnpm install hexo-generator-json-content@2.2.0 --save</div></pre></td></tr></table></figure>
+<p><a href="http://chaoo.oschina.io/2016/12/29/BlueLake%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE.html" target="_blank" rel="external">BlueLake&#x4E3B;&#x9898;</a></p>
+<p>&#x5982;&#x679C;&#x51FA;&#x73B0;&#x62A5;&#x9519;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(node:9488) [DEP0061] DeprecationWarning: fs.SyncWriteStream is deprecated.</div><div class="line">ERROR Plugin load failed: hexo-renderer-sass</div><div class="line">Error: Cannot find module &apos;node-sass&apos;</div></pre></td></tr></table></figure></p>
+<p>&#x53EF;&#x5C1D;&#x8BD5;&#x5B89;&#x88C5; <code>cnpm install node-sass@latest</code></p>
 ]]></content>
     </entry>
     
