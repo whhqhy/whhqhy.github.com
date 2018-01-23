@@ -548,7 +548,8 @@ README.txt
 <li><p>&#x5220;&#x9664;&#x5206;&#x652F; <code>git branch -d &lt;name&gt;</code></p>
 </li>
 </ul>
-<h1 id="&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;"><a href="#&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;" class="headerlink" title="&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;"></a>&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;</h1><p><br>git init<br>git add README.md || git add &#x2013;all<br>git commit -m &#x201C;first commit&#x201D;<br>git remote add origin <a href="https://github.com/whhqhy/git.git" target="_blank" rel="external">https://github.com/whhqhy/git.git</a><br>git push -u origin master<br>git pull origin master<br>git clone git@github.com:whhqhy/buildApk.git<br></p>]]></content>
+<h1 id="&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;"><a href="#&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;" class="headerlink" title="&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;"></a>&#x4E8C;&#x3001;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;</h1><p><br>git init<br>git add README.md || git add --all<br>git commit -m &#x201C;first commit&#x201D;<br>git remote add origin <a href="https://github.com/whhqhy/git.git" target="_blank" rel="external">https://github.com/whhqhy/git.git</a><br>git push -u origin master<br>git pull origin master<br>git clone git@github.com:whhqhy/buildApk.git<br></p>
+]]></content>
     </entry>
     
     <entry>
